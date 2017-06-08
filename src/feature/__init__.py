@@ -9,7 +9,7 @@
 
 import sys
 try:
-    import BOB as MFCC
+    import BOBS as MFCC
 except Exception as e:
     print >> sys.stderr, e
     print >> sys.stderr, "Warning: failed to import Bob, will use a slower version of MFCC instead."
