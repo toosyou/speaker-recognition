@@ -92,6 +92,17 @@ class ModelInterface(object):
             print tb.format_exc()
             return None
         return self.gmmset.predict_one(feat)
+        
+    def predict_scores(self, fs, signal):
+        """
+        return scores
+        """
+        try:
+            feat = mix_feature((fs, signal))
+        except Exception as e:
+            print tb.format_exc()
+            return None
+        return self.gmmset.predict_scores(feat)
 
     def dump(self, fname):
         """ dump all models to file"""
