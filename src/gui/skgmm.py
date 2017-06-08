@@ -40,4 +40,7 @@ class GMMSet(object):
 
     def predict_scores(self, x):
         scores = [self.gmm_score(gmm, x) / len(x) for gmm in self.gmms]
-        return scores
+        # p = sorted(enumerate(scores), key=operator.itemgetter(1), reverse=True)
+        # p = [(str(self.y[i]), y, p[0][1] - y) for i, y in p]
+        result = [(self.y[index], value) for (index, value) in enumerate(scores)]
+        return result
